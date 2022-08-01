@@ -1,0 +1,99 @@
+list1 = []
+def userpage():
+     print("user page accessed")
+     visitor = input("enter who are you tenant / owner / admin")
+  
+     if visitor == tenant:
+        print("see the list of houses")
+        fortenant()
+        print("want to see more details")
+
+        opt=input("enter '1' to see")
+        if opt == 1:
+            fullhousedetails()
+     elif visitor == owner:
+        print("you can add the houses in this portal")
+        opt=input("enter the house number '5' ")
+
+        if opt == 5:
+            print("the house is added " ,house11())
+        
+     elif visitor == admin:
+            print("Can view the report & Can manage the advertisement(content and timing")
+            fullhousedetails()
+            fortenant()
+            house11()
+            
+     else:
+        opt = int(input("Enter '0' to log out"))
+        if opt == 0:
+            houserentingportal()
+def login():
+     username = input("Please enter username: ")
+     for user in list1:
+          if username in user:
+               password = input("Please enter password: ")
+               if password in user:
+                    userpage()
+               else:
+                    print("Incorrect password")
+                    houserentingportal()
+          else:
+               print("Unregister username")
+               houserentingportal()
+
+def signup():
+     username = input("Please enter username: ")
+     password = input("Please enter password: ")
+     list1.append([username,password])
+     print(list1)
+     userpage()
+
+def houserentingportal():
+     opt = int(input("Enter '0' to sign up, '1' to login: "))
+     if opt == 0:
+          signup()
+     elif opt == 1:
+          login()
+houserentingportal()
+
+a="tenant"
+b= "owner"
+c="admin"
+
+class  housedetails:
+    def fulldetails(self,locality,city,squarefeet,housetype,rent,ownerid):
+        self.locality='kodambakkam'
+        self.city='chennai'
+        self.squarefeet=798
+        self.housetype='2bhk'
+        self.rent='rs6000/m'
+        self.ownerid=1
+        return self
+    fulldetails()
+
+
+    def userdetails(self,userid,name,email,mobile,aadhaar):
+        self.userid=1
+        self.name='lucifer'
+        self.email='lucifer@gmail.com'
+        self.mobile=9784549754
+        self.aadhaar=87486765445126
+        return self
+    userdetails()
+
+    def fortenant(self,location,amount):
+        self.location='kodambakkam'
+        self.amount='Rs5000'
+        return self
+    fortenant()
+
+    def house11(self,locality,city,squarefeet,housetype,rent,ownerid):
+        self.locality='Annanagar'
+        self.city='madurai'
+        self.squarefeet=1024
+        self.housetype='3bhk'
+        self.rent='rs9000/m'
+        self.ownerid=4
+        return self
+    house11()
